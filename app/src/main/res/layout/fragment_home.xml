@@ -7,5 +7,68 @@
     tools:context=".ui.Interests.HomeFragment">
 
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нейронные сети могут обучаться на больших объемах данных и выдавать высокую точность прогнозирования."
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:gravity="center"
+        android:background="@drawable/text_corners"
+        android:layout_marginHorizontal="15dp"/>
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нейронные сети могут иметь различные архитектуры, такие как прямые нейронные сети, рекуррентные нейронные сети, сверточные нейронные сети"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:gravity="center"
+        android:background="@drawable/text_corners"
+        android:layout_marginHorizontal="15dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нейросети состоят из нейронов, которые имеют свойства входа, выхода и весов."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:gravity="center"
+        android:background="@drawable/text_corners"
+        android:layout_marginHorizontal="15dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нейросети могут использоваться для различных задач, таких как распознавание речи, классификация изображений, обработка естественного языка, генерация текста и музыки."
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:background="@drawable/text_corners"
+        android:layout_marginHorizontal="15dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Нейронные сети могут быть обучены с помощью различных алгоритмов, таких как обратное распространение ошибки, генетические алгоритмы, алгоритмы оптимизации"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:gravity="center"
+        android:background="@drawable/text_corners"
+        android:layout_marginHorizontal="15dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
