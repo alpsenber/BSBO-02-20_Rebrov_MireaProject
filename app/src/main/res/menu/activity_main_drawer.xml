@@ -12,6 +12,10 @@
             android:id="@+id/nav_gallery"
             android:icon="@drawable/baseline_browser"
             android:title="Browser" />
+        <item
+            android:id="@+id/nav_musicPlayerFragment"
+            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            android:title="Music" />
 
 
     </group>

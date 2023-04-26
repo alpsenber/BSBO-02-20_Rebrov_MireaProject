@@ -16,7 +16,11 @@
         android:name="ru.mirea.rebrov.mireaproject.ui.Browser.GalleryFragment"
         android:label="browser"
         tools:layout="@layout/fragment_gallery" />
-
+    <fragment
+        android:id="@+id/nav_musicPlayerFragment"
+        android:name="ru.mirea.rebrov.mireaproject.MusicPlayerFragment"
+        android:label="fragment_music_player"
+        tools:layout="@layout/fragment_music_player" />
 
 
 </navigation>
