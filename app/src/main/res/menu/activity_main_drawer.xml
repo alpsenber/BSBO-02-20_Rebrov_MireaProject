@@ -16,7 +16,14 @@
             android:id="@+id/nav_musicPlayerFragment"
             android:icon="@android:drawable/ic_lock_silent_mode_off"
             android:title="Music" />
-
+        <item
+            android:id="@+id/nav_cameraFragment"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera" />
+        <item
+            android:id="@+id/nav_audioFragment"
+            android:icon="@android:drawable/stat_sys_headset"
+            android:title="Audio" />
 
     </group>
 </menu>
