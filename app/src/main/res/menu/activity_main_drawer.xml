@@ -24,6 +24,14 @@
             android:id="@+id/nav_audioFragment"
             android:icon="@android:drawable/stat_sys_headset"
             android:title="Audio" />
+        <item
+            android:id="@+id/nav_profileFragment"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:title="profile" />
+        <item
+            android:id="@+id/nav_filesFragment"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="files" />
 
     </group>
 </menu>

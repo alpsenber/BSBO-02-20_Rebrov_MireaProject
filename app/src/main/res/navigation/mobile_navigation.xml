@@ -31,6 +31,16 @@
         android:name="ru.mirea.rebrov.mireaproject.AudioFragment"
         android:label="fragment_audio"
         tools:layout="@layout/fragment_audio" />
+    <fragment
+        android:id="@+id/nav_profileFragment"
+        android:name="ru.mirea.rebrov.mireaproject.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/nav_filesFragment"
+        android:name="ru.mirea.rebrov.mireaproject.filesFragment"
+        android:label="fragment_files"
+        tools:layout="@layout/fragment_files" />
 
 
 </navigation>
