@@ -32,6 +32,10 @@
             android:id="@+id/nav_filesFragment"
             android:icon="@android:drawable/ic_dialog_email"
             android:title="files" />
+        <item
+            android:id="@+id/nav_mapService"
+            android:icon="@android:drawable/btn_plus"
+            android:title="map" />
 
     </group>
 </menu>
