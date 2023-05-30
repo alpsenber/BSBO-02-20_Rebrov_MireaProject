@@ -84,8 +84,10 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(i, 101);
+                Intent i = new Intent();
+                i.setType("image/*");
+                i.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(i, "Select Picture"), 101);
             }
         });
         return root;
@@ -98,17 +100,20 @@ public class ProfileFragment extends Fragment {
         if (requestCode == 101 && resultCode == RESULT_OK && null != data)
         {
             Uri selectedImage = data.getData();
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };
-            Cursor cursor = getActivity().getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-            cursor.moveToFirst();
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
-            cursor.close();
-            Bitmap bitmap = BitmapFactory.decodeFile(picturePath);
-            binding.imageView2.setImageBitmap(bitmap);
+            binding.imageView2.setImageURI(selectedImage);
+            Bitmap bitmap;
+            try
+            {
+                bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImage);
+            }
+            catch (IOException e)
+            {
+                throw new RuntimeException(e);
+            }
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] b = baos.toByteArray();
+
             imagePixels = Base64.encodeToString(b, Base64.DEFAULT);
         }
     }
