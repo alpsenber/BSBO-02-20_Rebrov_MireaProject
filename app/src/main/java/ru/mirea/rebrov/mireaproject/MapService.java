@@ -67,7 +67,7 @@ public class MapService extends Fragment
         });
         mapView.getOverlays().add(luzhniki);
         luzhniki.setIcon(ResourcesCompat.getDrawable(getResources(), org.osmdroid.library.R.drawable.osm_ic_follow_me_on, null));
-        luzhniki.setTitle("fарш");
+        luzhniki.setTitle("luzhniki");
         //Маркер 2 - Качалин
         Marker kachalin = new Marker(mapView);
         kachalin.setPosition(new GeoPoint(55.719506, 37.575903));
@@ -81,7 +81,7 @@ public class MapService extends Fragment
         });
         mapView.getOverlays().add(kachalin);
         kachalin.setIcon(ResourcesCompat.getDrawable(getResources(), org.osmdroid.library.R.drawable.osm_ic_follow_me_on, null));
-        kachalin.setTitle("Сыто Пьяно");
+        kachalin.setTitle("kachalin");
         //Маркер 3 - ВЭБ Арена
         Marker veb = new Marker(mapView);
         veb.setPosition(new GeoPoint(55.805931, 37.514307));
@@ -95,7 +95,7 @@ public class MapService extends Fragment
         });
         mapView.getOverlays().add(veb);
         veb.setIcon(ResourcesCompat.getDrawable(getResources(), org.osmdroid.library.R.drawable.osm_ic_follow_me_on, null));
-        veb.setTitle("zotto");
+        veb.setTitle("veb arena");
         return root;
     }
     private void myPosition()
