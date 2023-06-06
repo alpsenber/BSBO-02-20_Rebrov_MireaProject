@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -37,7 +36,7 @@ import javax.crypto.spec.SecretKeySpec;
 import ru.mirea.rebrov.mireaproject.databinding.FragmentFilesBinding;
 
 
-public class FilesFragment extends Fragment
+public class fileFragment extends Fragment
 {
     private FragmentFilesBinding binding;
     private SecretKey key;

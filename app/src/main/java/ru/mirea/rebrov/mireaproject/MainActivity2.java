@@ -41,28 +41,12 @@ public class MainActivity2 extends AppCompatActivity {
                 signIn(binding.editTextTextPersonName.getText().toString(), binding.editTextTextPersonName2.getText().toString());
             }
         });
-        binding.button4.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                signOut();
-            }
-        });
         binding.button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 createAccount(binding.editTextTextPersonName.getText().toString(), binding.editTextTextPersonName2.getText().toString());
-            }
-        });
-        binding.button2.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                sendEmailVerification();
             }
         });
     }
@@ -83,14 +67,11 @@ public class MainActivity2 extends AppCompatActivity {
         }
         else
         {
-            binding.textView.setText("sign out");
-            binding.textView2.setText(null);
+
             binding.editTextTextPersonName.setVisibility(View.VISIBLE);
             binding.editTextTextPersonName2.setVisibility(View.VISIBLE);
             binding.button.setVisibility(View.VISIBLE);
-            binding.button2.setVisibility(View.GONE);
             binding.button3.setVisibility(View.VISIBLE);
-            binding.button4.setVisibility(View.GONE);
         }
     }
 
@@ -153,40 +134,6 @@ public class MainActivity2 extends AppCompatActivity {
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
                             updateUI(null);
-                        }
-                        if (!task.isSuccessful())
-                        {
-                            binding.textView.setText("authentification failed");
-                        }
-                    }
-                });
-    }
-
-    private void signOut()
-    {
-        mAuth.signOut();
-        updateUI(null);
-    }
-
-    private void sendEmailVerification()
-    {
-        binding.button2.setEnabled(false);
-        final FirebaseUser user = mAuth.getCurrentUser();
-        Objects.requireNonNull(user).sendEmailVerification()
-                .addOnCompleteListener(this, new OnCompleteListener<Void>()
-                {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task)
-                    {
-                        binding.button2.setEnabled(true);
-                        if (task.isSuccessful())
-                        {
-                            Toast.makeText(getApplicationContext(), "Verification email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(getApplicationContext(), "Failed to send verification email.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

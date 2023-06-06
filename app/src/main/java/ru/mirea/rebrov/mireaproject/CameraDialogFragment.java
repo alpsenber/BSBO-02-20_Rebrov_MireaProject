@@ -9,26 +9,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-public class MyDialogFragment extends DialogFragment
+public class CameraDialogFragment extends DialogFragment
 {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("работа с файлом").setMessage("выбор действия с файлом").setIcon(R.mipmap.ic_launcher)
-                .setPositiveButton("open", new DialogInterface.OnClickListener() {
+
+        builder.setTitle("Камера").setMessage("Что сделать?").setIcon(R.mipmap.ic_launcher)
+                .setPositiveButton("Поделиться", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        ((fileFragment) getParentFragment()).onClickOpen();
+                        ((CameraFragment) getParentFragment()).onShareClicked();
                         dialog.cancel();
                     }
                 })
-                .setNeutralButton("save", new DialogInterface.OnClickListener()
-                {
+                .setNeutralButton("Сохранить", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        ((fileFragment) getParentFragment()).onClickSave();
+                    public void onClick(DialogInterface dialog, int which) {
+                        ((CameraFragment) getParentFragment()).onSaveClicked();
                         dialog.cancel();
                     }
                 });

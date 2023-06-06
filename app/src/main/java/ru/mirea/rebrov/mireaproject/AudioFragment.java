@@ -90,7 +90,7 @@ public class AudioFragment extends Fragment {
                     startPlaying();
                 } else {
                     playButton.setText("Start playing");
-                    recordButton.setEnabled(false);
+                    recordButton.setEnabled(true);
                     stopPlaying();
                 }
                 mStartPlaying = !mStartPlaying;

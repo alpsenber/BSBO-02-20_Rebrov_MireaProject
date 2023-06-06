@@ -3,6 +3,7 @@ package ru.mirea.rebrov.mireaproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -49,7 +50,7 @@ public class CameraFragment extends Fragment {
         {
             if (cameraPermissionStatus == PackageManager.PERMISSION_GRANTED)
             {
-                isWork = true;
+                ((MainActivity) getActivity()).camera_permission = true;
             } else
             {
                 ActivityCompat.requestPermissions(getActivity(), new String[] {android.Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION);
@@ -58,7 +59,7 @@ public class CameraFragment extends Fragment {
         else
         {
             if (cameraPermissionStatus == PackageManager.PERMISSION_GRANTED && storagePermissionStatus == PackageManager.PERMISSION_GRANTED) {
-                isWork = true;
+                ((MainActivity) getActivity()).camera_permission = true;
             }
             else
             {
@@ -72,6 +73,8 @@ public class CameraFragment extends Fragment {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
                     binding.imageView.setImageURI(imageUri);
+                    CameraDialogFragment fragment = new CameraDialogFragment();
+                    fragment.show(getChildFragmentManager(), "photo");
                 }
             }
         };
@@ -82,8 +85,10 @@ public class CameraFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (isWork) {
-                    try {
+                if (((MainActivity) getActivity()).camera_permission)
+                {
+                    try
+                    {
                         File photoFile = createImageFile();
                         String authorities = getActivity().getPackageName() + ".fileprovider";
                         imageUri = FileProvider.getUriForFile(getContext(), authorities, photoFile);
@@ -104,5 +109,25 @@ public class CameraFragment extends Fragment {
         String imageFileName = "IMAGE_" + timeStamp + "_";
         File storageDirectory = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         return File.createTempFile(imageFileName, ".jpg", storageDirectory);
+    }
+
+    public void onShareClicked()
+    {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+        shareIntent.setType("image/*");
+        startActivity(Intent.createChooser(shareIntent, "Share Image"));
+    }
+
+    public void onSaveClicked()
+    {
+        Bitmap bitmap;
+        try {
+            bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), imageUri);
+            MediaStore.Images.Media.insertImage(getActivity().getContentResolver(), bitmap, "save" , "Description");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

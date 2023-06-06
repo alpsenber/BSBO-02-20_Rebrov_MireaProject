@@ -7,35 +7,39 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/baseline_interests"
-            android:title="Interests" />
+            android:title="Интересы" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/baseline_browser"
-            android:title="Browser" />
+            android:title="Браузер" />
         <item
             android:id="@+id/nav_musicPlayerFragment"
             android:icon="@android:drawable/ic_lock_silent_mode_off"
-            android:title="Music" />
+            android:title="Музыка" />
         <item
             android:id="@+id/nav_cameraFragment"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Camera" />
+            android:title="Камера" />
         <item
             android:id="@+id/nav_audioFragment"
             android:icon="@android:drawable/stat_sys_headset"
-            android:title="Audio" />
+            android:title="Микрофон" />
         <item
             android:id="@+id/nav_profileFragment"
             android:icon="@android:drawable/ic_dialog_info"
-            android:title="profile" />
+            android:title="Профиль" />
         <item
-            android:id="@+id/nav_filesFragment"
+            android:id="@+id/nav_fileFragment"
             android:icon="@android:drawable/ic_dialog_email"
-            android:title="files" />
+            android:title="Файлы" />
+        <item
+            android:id="@+id/nav_networkFragment"
+            android:icon="@android:drawable/stat_sys_download"
+            android:title="Погода" />
         <item
             android:id="@+id/nav_mapService"
             android:icon="@android:drawable/btn_plus"
-            android:title="map" />
+            android:title="Карты" />
 
     </group>
 </menu>

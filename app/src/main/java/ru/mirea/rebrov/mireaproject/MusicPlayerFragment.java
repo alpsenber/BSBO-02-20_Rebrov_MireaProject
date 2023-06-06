@@ -22,6 +22,7 @@ import ru.mirea.rebrov.mireaproject.databinding.FragmentMusicPlayerBinding;
 public class MusicPlayerFragment extends Fragment {
 
     private FragmentMusicPlayerBinding binding;
+    private int play_status = 0;
 
 
     @Override
@@ -41,14 +42,19 @@ public class MusicPlayerFragment extends Fragment {
         binding.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent serviceIntent = new Intent(root.getContext(), MusicService.class);
-                ContextCompat.startForegroundService(root.getContext(), serviceIntent);
-            }
-        });
-        binding.imageButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                root.getContext().stopService(new Intent(root.getContext(), MusicService.class));
+                if(play_status == 0)
+                {
+                    Intent serviceIntent = new Intent(root.getContext(), MusicService.class);
+                    ContextCompat.startForegroundService(root.getContext(), serviceIntent);
+                    play_status = 1;
+                    binding.imageButton.setImageResource(R.drawable.baseline_pause_24);
+                }
+                else
+                {
+                    root.getContext().stopService(new Intent(root.getContext(), MusicService.class));
+                    play_status = 0;
+                    binding.imageButton.setImageResource(R.drawable.baseline_play_arrow_24);
+                }
             }
         });
         return root;

@@ -8,44 +8,49 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="ru.mirea.rebrov.mireaproject.ui.Interests.HomeFragment"
-        android:label="interests"
+        android:label="Интересы"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="ru.mirea.rebrov.mireaproject.ui.Browser.GalleryFragment"
-        android:label="browser"
+        android:label="Браузер"
         tools:layout="@layout/fragment_gallery" />
     <fragment
         android:id="@+id/nav_musicPlayerFragment"
         android:name="ru.mirea.rebrov.mireaproject.MusicPlayerFragment"
-        android:label="fragment_music_player"
+        android:label="Музыка"
         tools:layout="@layout/fragment_music_player" />
     <fragment
         android:id="@+id/nav_cameraFragment"
         android:name="ru.mirea.rebrov.mireaproject.CameraFragment"
-        android:label="fragment_camera"
+        android:label="Камера"
         tools:layout="@layout/fragment_camera" />
     <fragment
         android:id="@+id/nav_audioFragment"
         android:name="ru.mirea.rebrov.mireaproject.AudioFragment"
-        android:label="fragment_audio"
+        android:label="Микрофон"
         tools:layout="@layout/fragment_audio" />
     <fragment
         android:id="@+id/nav_profileFragment"
         android:name="ru.mirea.rebrov.mireaproject.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Профиль"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/nav_filesFragment"
-        android:name="ru.mirea.rebrov.mireaproject.filesFragment"
-        android:label="fragment_files"
+        android:id="@+id/nav_fileFragment"
+        android:name="ru.mirea.rebrov.mireaproject.fileFragment"
+        android:label="Файлы"
         tools:layout="@layout/fragment_files" />
     <fragment
         android:id="@+id/nav_mapService"
         android:name="ru.mirea.rebrov.mireaproject.MapService"
-        android:label="fragment_map_service"
+        android:label="Карты"
         tools:layout="@layout/fragment_map_service" />
+    <fragment
+        android:id="@+id/nav_networkFragment"
+        android:name="ru.mirea.rebrov.mireaproject.NetworkFragment"
+        android:label="Погода"
+        tools:layout="@layout/fragment_network" />
 
 
 </navigation>

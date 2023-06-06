@@ -50,9 +50,6 @@ public class MapService extends Fragment
         if (cOARSE_LOCATION == PackageManager.PERMISSION_GRANTED || fINE_LOCATION == PackageManager.PERMISSION_GRANTED)
         {
             myPosition();
-        } else
-        {
-            ActivityCompat.requestPermissions(getActivity(), new String[] {android.Manifest.permission.ACCESS_COARSE_LOCATION, android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_PERMISSION);
         }
         //Маркер 1 - Лужники
         Marker luzhniki = new Marker(mapView);
@@ -128,19 +125,5 @@ public class MapService extends Fragment
                 catch (Exception e) {}
             }
         });
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-    {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CODE_PERMISSION)
-        {
-            boolean isWork = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
-            if(isWork)
-            {
-                myPosition();
-            }
-        }
     }
 }
