@@ -51,6 +51,11 @@
         android:name="ru.mirea.rebrov.mireaproject.NetworkFragment"
         android:label="Погода"
         tools:layout="@layout/fragment_network" />
+    <fragment
+        android:id="@+id/nav_sensorFragment"
+        android:name="ru.mirea.rebrov.mireaproject.SensorFragment"
+        android:label="Компас"
+        tools:layout="@layout/fragment_sensor" />
 
 
 </navigation>

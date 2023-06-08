@@ -55,6 +55,7 @@ public class NetworkFragment extends Fragment {
     }
 
     private class DownloadPageTask extends AsyncTask<String, Void, String> {
+        private String city;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -64,6 +65,7 @@ public class NetworkFragment extends Fragment {
         protected String doInBackground(String... urls) {
             try {
                 JSONObject responseJson = new JSONObject(downloadIpInfo(urls[0]));
+                city = responseJson.getString("city");
                 String[] coord = responseJson.getString("loc").split(",");
                 return downloadIpInfo(String.format("https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&current_weather=true", coord[0], coord[1]));
 
@@ -88,8 +90,10 @@ public class NetworkFragment extends Fragment {
                 throw new RuntimeException(e);
             }
 
+            binding.city.setText(String.format("город - %s", city));
             binding.temp.setText(String.format("температура - %s", temp));
             binding.wind.setText(String.format("ветер - %s", wind));
+
 
             binding.connect.setText("connect");
             super.onPostExecute(result);

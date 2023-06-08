@@ -15,15 +15,15 @@ public class MyDialogFragment extends DialogFragment
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("работа с файлом").setMessage("выбор действия с файлом").setIcon(R.mipmap.ic_launcher)
-                .setPositiveButton("open", new DialogInterface.OnClickListener() {
+        builder.setTitle("Файлы").setMessage("Что сделать с файлом?").setIcon(R.mipmap.ic_launcher)
+                .setPositiveButton("Открыть", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ((fileFragment) getParentFragment()).onClickOpen();
                         dialog.cancel();
                     }
                 })
-                .setNeutralButton("save", new DialogInterface.OnClickListener()
+                .setNeutralButton("Сохранить", new DialogInterface.OnClickListener()
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which)

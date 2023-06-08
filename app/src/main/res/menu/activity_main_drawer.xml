@@ -17,6 +17,10 @@
             android:icon="@android:drawable/ic_lock_silent_mode_off"
             android:title="Музыка" />
         <item
+            android:id="@+id/nav_sensorFragment"
+            android:icon="@drawable/ic_menu_compass"
+            android:title="Компас" />
+        <item
             android:id="@+id/nav_cameraFragment"
             android:icon="@drawable/ic_menu_camera"
             android:title="Камера" />

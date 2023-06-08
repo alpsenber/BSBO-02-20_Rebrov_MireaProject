@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AudioFragment">
+    tools:context=".AudioFragment"
+    android:background="#00BCD4">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -20,13 +21,13 @@
             android:id="@+id/recordButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="record" />
+            android:text="Запись" />
 
         <Button
             android:id="@+id/playButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="play" />
+            android:text="Воспроизвести" />
     </LinearLayout>
 
 

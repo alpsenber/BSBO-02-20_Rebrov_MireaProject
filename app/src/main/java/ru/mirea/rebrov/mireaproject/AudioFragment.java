@@ -69,11 +69,11 @@ public class AudioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (mStartRecording) {
-                    recordButton.setText("Stop recording");
+                    recordButton.setText("Завершить запись");
                     playButton.setEnabled(false);
                     startRecording();
                 } else {
-                    recordButton.setText("Start recording");
+                    recordButton.setText("Начать запись");
                     playButton.setEnabled(true);
                     stopRecording();
                 }
@@ -85,11 +85,11 @@ public class AudioFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (mStartPlaying) {
-                    playButton.setText("Stop playing");
+                    playButton.setText("Закончить");
                     recordButton.setEnabled(false);
                     startPlaying();
                 } else {
-                    playButton.setText("Start playing");
+                    playButton.setText("Воспроизведение");
                     recordButton.setEnabled(true);
                     stopPlaying();
                 }
