@@ -44,6 +44,10 @@
             android:id="@+id/nav_mapService"
             android:icon="@android:drawable/btn_plus"
             android:title="Карты" />
+        <item
+            android:id="@+id/nav_appFragment"
+            android:icon="@android:drawable/ic_dialog_dialer"
+            android:title="Список приложений" />
 
     </group>
 </menu>

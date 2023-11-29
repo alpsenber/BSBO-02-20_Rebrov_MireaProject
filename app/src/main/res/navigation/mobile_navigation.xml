@@ -56,6 +56,16 @@
         android:name="ru.mirea.rebrov.mireaproject.SensorFragment"
         android:label="Компас"
         tools:layout="@layout/fragment_sensor" />
+    <fragment
+        android:id="@+id/fragment_phoneid"
+        android:name="ru.mirea.rebrov.mireaproject.Fragment_phoneid"
+        android:label="fragment_phoneid"
+        tools:layout="@layout/fragment_phoneid" />
+    <fragment
+        android:id="@+id/nav_appFragment"
+        android:name="ru.mirea.rebrov.mireaproject.AppFragment"
+        android:label="Все приложения"
+        tools:layout="@layout/fragment_app" />
 
 
 </navigation>
